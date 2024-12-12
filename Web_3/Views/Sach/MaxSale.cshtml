@@ -1,0 +1,46 @@
+﻿@model Web_3.Models.Sach
+
+@{
+    ViewBag.Title = "Sách có doanh thu cao nhất";
+}
+
+<h2>@(ViewBag.Title)</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TheLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongTon)
+        </th>
+        <th>Doanh thu</th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model.TenSach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.TheLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.DonGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.SoLuongTon)
+        </td>
+        <td>
+            @((ViewBag.DoanhThu as decimal? ?? 0).ToString("n0") + " VND")
+        </td>
+    </tr>
+
+</table>
